@@ -1,8 +1,12 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 # You can set some options to better print pandas df
 # pd.set_option('display.max_columns', None)
 # pd.set_option('display.max_colwidth', 20)
+
+offence_code = []
+offence_code_total = []
 
 df = pd.read_csv(r".\penalty_data_set_2.csv", low_memory=False)
 
@@ -66,3 +70,19 @@ lidar = True # Check the checkbox value
 if(lidar):
    captured_cases = filtered_df[filtered_df['OFFENCE_DESC'].str.contains("Lidar")]
    print(captured_cases)
+
+'''
+   ------------ Feature 2 --------------------
+   Produce a chart to show the distribution of cases in each offense code
+'''
+offence_code = df['OFFENCE_CODE'].unique().tolist()
+for i in offence_code:
+    offence_code_total.append(len(df[df['OFFENCE_CODE']==i]))
+# Draw the bar graph
+plt.bar(offence_code, offence_code_total)
+plt.margins(x=0, y=0)
+# plt.xticks(np.arange(0, len(offence_code), step = 1), labels = offence_code)
+plt.title("Penalty case distribution") 
+plt.ylabel("Distribution") 
+plt.xlabel("Offence code") 
+plt.show()
