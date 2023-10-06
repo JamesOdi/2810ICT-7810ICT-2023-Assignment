@@ -31,10 +31,10 @@ for key in sorted(offence_count.keys()):
 # # Draw the bar graph
 fig = plt.figure(figsize=(10, 7))  # figure size
 
-plt.bar(offence_year, offence_code_total)
+plt.bar(offence_year, offence_code_total, width = 0.4)
 plt.title("Penalty case distribution")
 plt.ylabel("Total of penalty notices issued")
 plt.xlabel("Year")
 plt.xticks(rotation=45)
-plt.savefig("offence_code_distribution.png")
+# plt.savefig("offence_code_distribution.png")
 plt.show()
