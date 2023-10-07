@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 df = pd.read_csv(r"api/penalty_data_set_2.csv", low_memory=False)
 
 '''
-   ------------ Feature 5 --------------------
+   ------------ Feature 5 ----------
    Analysing the cases caused by exceed speed, ... - ie: trend over time, offense code, and so on.
 '''
 
@@ -22,7 +22,7 @@ location_total = []
 plt.pie([exceed_speed_df['TOTAL_NUMBER'].sum(), df['TOTAL_NUMBER'].sum()], labels=['Exceed speed offences','Total offences'], autopct='%1.1f%%', explode=(0, 0.2))
 plt.savefig("images/exceed_speed_percentage.png")
 
-# # ---- Information display as a table ----
+# ---- Information display as a table ----
 info = exceed_speed_df.drop_duplicates(subset = 'OFFENCE_CODE')
 print(info.loc[:,['OFFENCE_CODE', 'OFFENCE_DESC', 'OFFENCE_FINYEAR', 'OFFENCE_MONTH', 'FACE_VALUE']])
 
