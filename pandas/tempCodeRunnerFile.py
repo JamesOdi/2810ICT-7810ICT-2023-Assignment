@@ -1,0 +1,1 @@
+pd.DataFrame(df2.size().reset_index(name = 'TOTAL_NUMBER'))
