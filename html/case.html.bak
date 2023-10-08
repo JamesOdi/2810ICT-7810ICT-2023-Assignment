@@ -19,9 +19,10 @@
     <div class="position-sticky">
         <ul class="nav flex-column">
             
-            <li class="nav-item">
-                <h4 class="nav-heading">Menu</h4>
+           <p></p> <li class="nav-item">
+                <h4> Menu</h4><p></p>
             </li>
+			
 
             
            <div class="dropdown">
@@ -31,7 +32,7 @@
     <ul class="dropdown-menu">
       <li><a class="dropdown-item" href="#">Camera</a></li>
       <li><a class="dropdown-item active" href="#">Radar</a></li>
-      <li><a class="dropdown-item disabled" href="#">Lidar</a></li>
+      <li><a class="dropdown-item" href="">Lidar</a></li>
     </ul>
   </div>
 </div><p> </p>
@@ -48,24 +49,28 @@
 
                 <div class="container mt-5">
                     <h1>Case Distribution</h1>
-                    <p>Select the category</p>
+                    <p>Select the category and desired time period</p>
                     
 					
 					
 					
                     <!-- Search Bars for "From" and "To" Dates -->
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="fromDate">From Date:</label>
                                 <input type="date" class="form-control" id="fromDate">
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-4">
                             <div class="form-group">
                                 <label for="toDate">To Date:</label>
                                 <input type="date" class="form-control" id="toDate">
                             </div>
+                        </div>
+						<div class="col-md-4">
+                          <textarea rows="2" cols="50" placeholder="Search By Offence Code"></textarea>
+
                         </div>
                     </div>
 
@@ -85,6 +90,25 @@
             </tr>
         </thead>
         <tbody id="resultsTableBody">
+		<tr>
+                                <td>Data 1</td>
+                                <td>Data 2</td>
+                                <td>Data 3</td>
+                            </tr>
+							<tr>
+                                <td>Data 1</td>
+                                <td>Data 2</td>
+                                <td>Data 3</td>
+                            </tr>
+							<tr>
+                                <td>Data 1</td>
+                                <td>Data 2</td>
+                                <td>Data 3</td>
+                            </tr>
+							<tr>
+                                <td>Data 1</td>
+                                <td>Data 2</td>
+                                <td>Data 3</td>
         </tbody>
     </table>
 </div>

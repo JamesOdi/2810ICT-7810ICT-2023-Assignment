@@ -19,8 +19,8 @@
     <div class="position-sticky">
         <ul class="nav flex-column">
             
-            <li class="nav-item">
-                <h4 class="nav-heading">Menu</h4>
+           <p></p> <li class="nav-item">
+                <h4> Menu</h4><p></p>
             </li>
 
             
@@ -29,7 +29,7 @@
       Penalty Cases
     </button>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Camera</a></li>
+      <li><a class="dropdown-item" href="index.html">Camera</a></li>
       <li><a class="dropdown-item active" href="#">Radar</a></li>
       <li><a class="dropdown-item disabled" href="#">Lidar</a></li>
     </ul>
@@ -53,80 +53,30 @@
 					
 					
 					
-                    <!-- Search Bars for "From" and "To" Dates -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="fromDate">From Date:</label>
-                                <input type="date" class="form-control" id="fromDate">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="toDate">To Date:</label>
-                                <input type="date" class="form-control" id="toDate">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- "Show" Button -->
-                    <button class="btn btn-primary mt-3">Show</button>
-					
+                  
 	<!-- Main Content -->
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <!-- Analytics Chart -->
-                <div class="my-4">
-                    <h2>Analytics Chart</h2>
-					<p></p>
-                    <!-- Add your analytics chart here -->
-                    <div id="analytics-chart"></div>
-                </div>
+            
 
-                <!-- Graph Chart -->
                 <div class="my-4">
-                    <h2>Graph Chart</h2>
-					<p></p>
-                    <!-- Add your graph chart here -->
-                    <div id="graph-chart"></div>
-                </div>
+                    <div class="row">
+	<div class="col-sm-6 col-md-12 col-lg-4 col-xl-6 col-xxl-4"><h2>Exceed Speed   <a href="speed.html">
+ <img src="pie.png" id="analytics-chart" href="speed.html" width="300" height="200"></h2><br><p></div> </a>
+	
+	<div class="col-sm-12 col-md-6 col-lg-4 col-xl-6 col-xxl-4"><h2>Mobile Phone Usage   <a href="mobile.html"><img src="pie.png" id="pie-chart" href="mobile.html" width="300" height="200"></h2><br><p> </div></a>
+</div>
+					
+					
 
-                <!-- Pie Chart -->
-                <div class="my-4">
-                    <h2>Pie Chart</h2>
-					<p></p>
-                    <!-- Add your pie chart here -->
-                    <div id="pie-chart"></div>
-                </div>
 
-                <!-- Table -->
-                <div class="my-4">
-                    <h2>Data Table</h2>
-                    <!-- Add your data table here -->
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>Column 1</th>
-                                <th>Column 2</th>
-                                <th>Column 3</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Data 1</td>
-                                <td>Data 2</td>
-                                <td>Data 3</td>
-                            </tr>
-                            <!-- Add more rows as needed -->
-                        </tbody>
-                    </table>
-                </div>
+              
             </main>
-            </main>
+
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>	
 <script>
+
     document.addEventListener("DOMContentLoaded", function () {
         const showButton = document.querySelector("#showButton");
         const fromDateInput = document.querySelector("#fromDate");
@@ -144,8 +94,7 @@
             alert(`Selected From Date: ${fromDate}\nSelected To Date: ${toDate}`);
         });
     });
-</script>
-<script>
+
     document.addEventListener("DOMContentLoaded", function () {
         const showButton = document.querySelector("#showButton");
         const fromDateInput = document.querySelector("#fromDate");

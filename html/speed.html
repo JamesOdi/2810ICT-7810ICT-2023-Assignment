@@ -19,7 +19,7 @@
     <div class="position-sticky">
         <ul class="nav flex-column">
             
-            <p></p> <li class="nav-item">
+           <p></p> <li class="nav-item">
                 <h4> Menu</h4><p></p>
             </li>
 
@@ -29,9 +29,9 @@
       Penalty Cases
     </button>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Camera</a></li>
+      <li><a class="dropdown-item" href="index.html">Camera</a></li>
       <li><a class="dropdown-item active" href="#">Radar</a></li>
-      <li><a class="dropdown-item" href="#">Lidar</a></li>
+      <li><a class="dropdown-item disabled" href="#">Lidar</a></li>
     </ul>
   </div>
 </div><p> </p>
@@ -47,90 +47,70 @@
                 </nav>
 
                 <div class="container mt-5">
-                    <h1>Welcome to NSW Traffic Violation Database</h1>
-                    <p>Detaild view on NSW traffic Rules Violation</p>
+                    <h1> Exceed Speeding Analytics</h1>
+                    <p>Quick Glance at summary of Exceed Speeding traffic violations</p>
                     
 					
-					<!-- Search Bar -->
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search...">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="button">Search</button>
-                        </div>
-                    </div>
-					
-                    <!-- Search Bars for "From" and "To" Dates -->
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="fromDate">From Date:</label>
-                                <input type="date" class="form-control" id="fromDate">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="toDate">To Date:</label>
-                                <input type="date" class="form-control" id="toDate">
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- "Show" Button -->
-                    <button class="btn btn-primary mt-3">Show</button>
 					
 					
-<!-- Result Table -->
-<div class="mt-4">
-    <h2>Results</h2>
-    <table class="table">
-        <thead>
-            <tr>
-                <th scope="col">Date</th>
-                <th scope="col">Violation Type</th>
-                <!-- Add more table headers as needed -->
-            </tr>
-        </thead>
-        <tbody id="resultsTableBody">
-        </tbody>
-    </table>
+                  
+	<!-- Main Content -->
+            
+                <div class="my-4">
+                   
+					
+					<div class="row">
+	<div class="col-sm-6 col-md-12 col-lg-4 col-xl-6 col-xxl-4"><h2>Pie Chart    <img src="pie.png" id="analytics-chart" width="300" height="200"></h2><br><p></div> 
+	<div class="col-sm-6 col-md-6 col-lg-4 col-xl-6 col-xxl-4"><h2>Trend <img src="pie.png" id="graph-chart" width="300" height="200"></h2><br><p></div>
+	<div class="col-sm-12 col-md-6 col-lg-4 col-xl-6 col-xxl-4"><h2>Graph  <img src="pie.png" id="pie-chart" width="300" height="200"></h2><br><p> </div>
 </div>
-	<div class="table-responsive">
-	<table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Penalty</th>
-        <th>Record</th>
-        <th>Details</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>example</td>
-        <td>example</td>
-        <td>example</td>
-      </tr>
-      <tr>
-        <td>example</td>
-        <td>example</td>
-        <td>mexample</td>
-      </tr>
-      <tr>
-        <td>example</td>
-        <td>example</td>
-        <td>example</td>
-      </tr>
-    </tbody>
-  </table>
 
 
-					
+                <!-- Table -->
+                <div class="my-4">
+                    <h2>Data Table</h2>
+                    <!-- Add your data table here -->
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Column 1</th>
+                                <th>Column 2</th>
+                                <th>Column 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Data 1</td>
+                                <td>Data 2</td>
+                                <td>Data 3</td>
+                            </tr>
+							<tr>
+                                <td>Data 1</td>
+                                <td>Data 2</td>
+                                <td>Data 3</td>
+                            </tr>
+							<tr>
+                                <td>Data 1</td>
+                                <td>Data 2</td>
+                                <td>Data 3</td>
+                            </tr>
+							<tr>
+                                <td>Data 1</td>
+                                <td>Data 2</td>
+                                <td>Data 3</td>
+                            </tr>
+                           
+                        </tbody>
+                    </table>
                 </div>
+            </main>
             </main>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>	
 <script>
+
     document.addEventListener("DOMContentLoaded", function () {
         const showButton = document.querySelector("#showButton");
         const fromDateInput = document.querySelector("#fromDate");
@@ -148,8 +128,7 @@
             alert(`Selected From Date: ${fromDate}\nSelected To Date: ${toDate}`);
         });
     });
-</script>
-<script>
+
     document.addEventListener("DOMContentLoaded", function () {
         const showButton = document.querySelector("#showButton");
         const fromDateInput = document.querySelector("#fromDate");

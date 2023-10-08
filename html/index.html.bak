@@ -31,7 +31,7 @@
     <ul class="dropdown-menu">
       <li><a class="dropdown-item" href="#">Camera</a></li>
       <li><a class="dropdown-item active" href="#">Radar</a></li>
-      <li><a class="dropdown-item disabled" href="#">Lidar</a></li>
+      <li><a class="dropdown-item" href="#">Lidar</a></li>
     </ul>
   </div>
 </div><p> </p>
@@ -122,6 +122,33 @@
     </tbody>
   </table>
 
+
+					
+                </div>
+            </main>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>	
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const showButton = document.querySelector("#showButton");
+        const fromDateInput = document.querySelector("#fromDate");
+        const toDateInput = document.querySelector("#toDate");
+
+        showButton.addEventListener("click", function () {
+            // Get the selected "From" and "To" dates
+            const fromDate = fromDateInput.value;
+            const toDate = toDateInput.value;
+
+            // You can perform actions with the selected dates here
+            // For example, you can send them to a backend server for data retrieval
+
+            // For now, let's just display the selected dates in an alert
+            alert(`Selected From Date: ${fromDate}\nSelected To Date: ${toDate}`);
+        });
+    });
+</script>
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const showButton = document.querySelector("#showButton");
@@ -154,33 +181,6 @@
                 `;
                 resultsTableBody.appendChild(row);
             });
-        });
-    });
-</script>
-
-					
-                </div>
-            </main>
-        </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>	
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const showButton = document.querySelector("#showButton");
-        const fromDateInput = document.querySelector("#fromDate");
-        const toDateInput = document.querySelector("#toDate");
-
-        showButton.addEventListener("click", function () {
-            // Get the selected "From" and "To" dates
-            const fromDate = fromDateInput.value;
-            const toDate = toDateInput.value;
-
-            // You can perform actions with the selected dates here
-            // For example, you can send them to a backend server for data retrieval
-
-            // For now, let's just display the selected dates in an alert
-            alert(`Selected From Date: ${fromDate}\nSelected To Date: ${toDate}`);
         });
     });
 </script>
