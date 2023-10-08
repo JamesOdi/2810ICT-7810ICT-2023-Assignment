@@ -55,13 +55,13 @@
                     <div class="row">
                         <div class="col-sm-6 col-md-12 col-lg-4 col-xl-6 col-xxl-4">
                             <h2>Exceed Speed <a href="speed">
-                                    <img src="" id="analytics-chart" width="300" height="200">
+                                    <img src='{{asset("images/speed.png")}}' id="analytics-chart" width="300" height="200">
                             </h2><br>
                             <p>
                         </div> </a>
 
                         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-6 col-xxl-4">
-                            <h2>Mobile Phone Usage <a href="mobile"><img src="pie.png" id="pie-chart" href="mobile"
+                            <h2>Mobile Phone Usage <a href="mobile"><img src='{{asset("images/phone.png")}}' id="pie-chart" href="mobile"
                                         width="300" height="200"></h2><br>
                             <p>
                         </div></a>
