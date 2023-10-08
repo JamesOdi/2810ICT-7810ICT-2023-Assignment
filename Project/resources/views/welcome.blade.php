@@ -47,7 +47,7 @@
 
                 <div class="container mt-5">
                     <h1 id="result">Welcome to NSW Traffic Violation Database</h1>
-                    <p>Detaild view on NSW traffic Rules Violation</p>
+                    <p>Detail view on NSW traffic Rules Violation</p>
                     
 					<!-- Search Bar -->
                     <div class="input-group mb-3">
@@ -55,46 +55,55 @@
                         <div class="input-group-append">
                             <form action="analytics" method="get">
                                 {{csrf_field()}}
-                                <input name="nu" id="" value='90'>
+                                <input type="hidden" name="nu" id="" value='90'>
                                 <input class="btn btn-outline-secondary" type="submit">Search</input>
                             </form>
                         </div>
                     </div>
 					
                     <!-- Search Bars for "From" and "To" Dates -->
+                    <form action="test" method="get">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="fromDate">From Date:</label>
-                                <input type="date" class="form-control" id="fromDate">
+                                <input type="date" class="form-control" id="fromDate" name="fromDate">
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="toDate">To Date:</label>
-                                <input type="date" class="form-control" id="toDate">
+                                <input type="date" class="form-control" id="toDate" name="toDate">
                             </div>
                         </div>
                     </div>
-
                     <!-- "Show" Button -->
-                    <button class="btn btn-primary mt-3">Show</button>
-					
-					
+                    <input class="btn btn-primary mt-3" type="submit" value="Show">
+                    </form>
+                    <table id="csvTable">
+</table>
 <!-- Result Table -->
 <div class="mt-4">
     <h2>Results</h2>
-    <table class="table">
+    <table class="table table-bordered">
         <thead>
             <tr>
-                <th scope="col">Date</th>
-                <th scope="col">Violation Type</th>
-                <!-- Add more table headers as needed -->
+                @foreach (current($response) as $header)
+                    <th>{{ $header }}</th>
+                @endforeach
             </tr>
         </thead>
-        <tbody id="resultsTableBody">
+        <tbody>
+            @foreach (array_slice($response, 1) as $row)
+                <tr>
+                    @foreach ($row as $cell)
+                        <td>{{ $cell }}</td>
+                    @endforeach
+                </tr>
+            @endforeach
         </tbody>
     </table>
+    
 </div>
 	<div class="table-responsive">
 	<table class="table table-bordered">

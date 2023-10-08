@@ -18,28 +18,26 @@ df = pd.read_csv(r"api/penalty_data_set_2.csv", low_memory=False)
 '''
 # Make index start from 1:
 # df.index = range(1, len(df)+1)
-input_data = sys.argv[1]
+to_date = ''
+from_date = ''
 
-from_date = input("From (dd/mm/yyyy) : ") # take value from html tag
-to_date = input("to (dd/mm/yyyy): ") # take value from html tag
+if len(sys.argv ) > 2:
+    to_date = sys.argv[1]
+    from_date = sys.argv[2]
 
 '''
  IF FROM AND TO INPUT IS EMPTY -> USE DF DATAFRAME
  IF FROM AND TO INPUT IS ENTERED -> USE FILTERED DATAFRAME
 '''
+
 if from_date == '' and to_date == '':
     data = df
     print(data)
 else:
     data = df.loc[(df['OFFENCE_MONTH'] >= from_date) & (df['OFFENCE_MONTH'] <= to_date)]
-
-# # Search offences by offence_code
-# code = int(input("Search by offence code: "))
-# offences = data[data['OFFENCE_CODE'] == code]
-# print(offences)
-
-# Search offences by offence type
-    search = input("Search by offence type: ")
+    print(data)
+    result = data
+    search = ''
     match search:
         case 'mobile':
             result = data[data['MOBILE_PHONE_IND'] == 'Y']
@@ -51,6 +49,5 @@ else:
             result = data[data['FOOD_IND'] == 'Y'] 
         case 'parking': 
             result = data[data['PARKING_IND'] == 'Y'] 
-            
-    print(result)
+    # print(result)
     
