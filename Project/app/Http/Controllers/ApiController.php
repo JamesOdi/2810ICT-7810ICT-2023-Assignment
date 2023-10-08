@@ -19,7 +19,7 @@ class ApiController extends Controller
         } else {
             dd('File not found');
         }
-        
+
         $filePath = 'api/penalty_data_set_2.csv';
 
         // Check if the CSV file exists
@@ -58,13 +58,11 @@ class ApiController extends Controller
         $pythonPath = '/usr/bin/python3.10';
         if (file_exists($api_file)) {
             $output = shell_exec("$pythonPath $api_file $inputData");
-            dd($output);
         } else {
             dd('File not found');
         }
         
         // Process the output or error as needed
-        dd(response()->json(['output' => $output]));
-        return response()->json(['output' => $output]);
+        return view('mobile');
     }
 }

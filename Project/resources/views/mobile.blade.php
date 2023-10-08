@@ -28,15 +28,14 @@
                         </li>
 
 
-
                         <div class="dropdown">
                             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
                                 Penalty Cases
                             </button>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Camera</a></li>
+                                <li><a class="dropdown-item" href="index.html">Camera</a></li>
                                 <li><a class="dropdown-item active" href="#">Radar</a></li>
-                                <li><a class="dropdown-item" href="">Lidar</a></li>
+                                <li><a class="dropdown-item disabled" href="#">Lidar</a></li>
                             </ul>
                         </div>
                 </div>
@@ -54,91 +53,74 @@
             </nav>
 
             <div class="container mt-5">
-                <h1>Case Distribution</h1>
-                <p>Select the category and desired time period</p>
+                <h1> Mobile Phone Usage Analytics</h1>
+                <p>Quick Glance at summary of Mobile Phone Usage violations</p>
 
-                <!-- Search Bars for "From" and "To" Dates -->
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="fromDate">From Date:</label>
-                            <input type="date" class="form-control" id="fromDate">
+
+
+
+
+                <!-- Main Content -->
+
+                <div class="my-4">
+                    <div class="column">
+                        <div class="col-sm-6 col-md-12 col-lg-4 col-xl-6 col-xxl-4">
+                            <h2>Pie Chart <img src='{{asset("images/mobile_phone_usage_percentage.png")}}'
+                                    id="analytics-chart"></h2><br>
+                            <p>
+                        </div>
+                        <div class="col-sm-6 col-md-6 col-lg-4 col-xl-6 col-xxl-4">
+                            <h2>Trend <img src='{{asset("images/mobile_phone_usage_trend.png")}}' id="graph-chart"></h2>
+                            <br>
+                            <p>
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label for="toDate">To Date:</label>
-                            <input type="date" class="form-control" id="toDate">
-                        </div>
+
+                    <!-- Table -->
+                    <div class="my-4">
+                        <h2>Data Table</h2>
+                        <!-- Add your data table here -->
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Column 1</th>
+                                    <th>Column 2</th>
+                                    <th>Column 3</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Data 1</td>
+                                    <td>Data 2</td>
+                                    <td>Data 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Data 1</td>
+                                    <td>Data 2</td>
+                                    <td>Data 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Data 1</td>
+                                    <td>Data 2</td>
+                                    <td>Data 3</td>
+                                </tr>
+                                <tr>
+                                    <td>Data 1</td>
+                                    <td>Data 2</td>
+                                    <td>Data 3</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="col-md-4">
-                        <textarea rows="2" cols="50" placeholder="Search By Offence Code"></textarea>
-
-                    </div>
-                </div>
-
-                <!-- "Show" Button -->
-                <button class="btn btn-primary mt-3">Show</button>
-
-
-                <!-- Result Table -->
-                <div class="mt-4">
-                    <h2>Results</h2>
-                    <p></p>
-                    <div class="btn-group">
-
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-primary dropdown-toggle"
-                                data-bs-toggle="dropdown">Violation Type</button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Seat Belt</a>
-                                <a class="dropdown-item" href="#">Speeding</a>
-                                <a class="dropdown-item" href="#">Mobile</a>
-                                <a class="dropdown-item" href="#">School Zone</a>
-                                <a class="dropdown-item" href="#">Red Light</a>
-                                <a class="dropdown-item" href="#">Speeding</a>
-                            </div>
-                        </div>
-                    </div>
-                    <p></p>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Date</th>
-                                <th scope="col">Violation Type</th>
-                                <!-- Add more table headers as needed -->
-                            </tr>
-                        </thead>
-                        <tbody id="resultsTableBody">
-                            <tr>
-                                <td>Data 1</td>
-                                <td>Data 2</td>
-                                <td>Data 3</td>
-                            </tr>
-                            <tr>
-                                <td>Data 1</td>
-                                <td>Data 2</td>
-                                <td>Data 3</td>
-                            </tr>
-                            <tr>
-                                <td>Data 1</td>
-                                <td>Data 2</td>
-                                <td>Data 3</td>
-                            </tr>
-                            <tr>
-                                <td>Data 1</td>
-                                <td>Data 2</td>
-                                <td>Data 3</td>
-                        </tbody>
-                    </table>
-                </div>
-
+        </main>
         </main>
     </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+
         document.addEventListener("DOMContentLoaded", function () {
             const showButton = document.querySelector("#showButton");
             const fromDateInput = document.querySelector("#fromDate");
@@ -156,8 +138,7 @@
                 alert(`Selected From Date: ${fromDate}\nSelected To Date: ${toDate}`);
             });
         });
-    </script>
-    <script>
+
         document.addEventListener("DOMContentLoaded", function () {
             const showButton = document.querySelector("#showButton");
             const fromDateInput = document.querySelector("#fromDate");

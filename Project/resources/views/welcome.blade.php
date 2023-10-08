@@ -1,6 +1,7 @@
 <!DOCTYPE html>
- 
+
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,61 +9,64 @@
     <!-- Add Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
+
 <body>
     <div class="container-fluid">
         <div class="row">
 
-<!-- Left Sidebar -->
-<nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar position-fixed top-0">
-    
-    <div class="position-sticky">
-        <ul class="nav flex-column">
-            
-            <li class="nav-item">
-                <h4 class="nav-heading">Menu</h4>
-            </li>
+            <!-- Left Sidebar -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar position-fixed top-0">
 
-            
-           <div class="dropdown">
-    <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
-      Penalty Cases
-    </button>
-    <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Camera</a></li>
-      <li><a class="dropdown-item active" href="#">Radar</a></li>
-      <li><a class="dropdown-item disabled" href="#">Lidar</a></li>
-    </ul>
-  </div>
-</div><p> </p>
-          <a href="case.html" class="btn btn-success">Case Distribution</a><p> </p>
-            <a href="analytics.html" class="btn btn-success">Analytics</a>
-        </ul>
-    </div>
-</nav>			
+                <div class="position-sticky">
+                    <ul class="nav flex-column">
 
-            <!-- Page Content -->
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-                <nav class="navbar navbar-expand-lg navbar-light bg-light">                    
-                </nav>
+                        <li class="nav-item">
+                            <h4 class="nav-heading">Menu</h4>
+                        </li>
 
-                <div class="container mt-5">
-                    <h1 id="result">Welcome to NSW Traffic Violation Database</h1>
-                    <p>Detail view on NSW traffic Rules Violation</p>
-                    
-					<!-- Search Bar -->
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search...">
-                        <div class="input-group-append">
-                            <form action="analytics" method="get">
-                                {{csrf_field()}}
-                                <input type="hidden" name="nu" id="" value='90'>
-                                <input class="btn btn-outline-secondary" type="submit">Search</input>
-                            </form>
+
+                        <div class="dropdown">
+                            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+                                Penalty Cases
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Camera</a></li>
+                                <li><a class="dropdown-item active" href="#">Radar</a></li>
+                                <li><a class="dropdown-item disabled" href="#">Lidar</a></li>
+                            </ul>
                         </div>
+                </div>
+                <p> </p>
+                <a href="case.html" class="btn btn-success">Case Distribution</a>
+                <p> </p>
+                <a href="analytics.html" class="btn btn-success">Analytics</a>
+                </ul>
+        </div>
+        </nav>
+
+        <!-- Page Content -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            </nav>
+
+            <div class="container mt-5">
+                <h1 id="result">Welcome to NSW Traffic Violation Database</h1>
+                <p>Detail view on NSW traffic Rules Violation</p>
+
+                <!-- Search Bar -->
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Search...">
+                    <div class="input-group-append">
+                        <form action="analytics" method="get">
+                            {{csrf_field()}}
+                            <input type="hidden" name="nu" id="" value='90'>
+                            <input class="btn btn-outline-secondary" type="submit">Search</input>
+                        </form>
                     </div>
-					
-                    <!-- Search Bars for "From" and "To" Dates -->
-                    <form action="test" method="get">
+                </div>
+
+                <!-- Search Bars for "From" and "To" Dates -->
+                <form action="test" method="get">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -79,68 +83,65 @@
                     </div>
                     <!-- "Show" Button -->
                     <input class="btn btn-primary mt-3" type="submit" value="Show">
-                    </form>
-                    <table id="csvTable">
-</table>
-<!-- Result Table -->
-<div class="mt-4">
-    <h2>Results</h2>
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                @foreach (current($response) as $header)
-                    <th>{{ $header }}</th>
-                @endforeach
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (array_slice($response, 1) as $row)
-                <tr>
-                    @foreach ($row as $cell)
-                        <td>{{ $cell }}</td>
-                    @endforeach
-                </tr>
-            @endforeach
-        </tbody>
-    </table>
-    
-</div>
-	<div class="table-responsive">
-	<table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Penalty</th>
-        <th>Record</th>
-        <th>Details</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>example</td>
-        <td>example</td>
-        <td>example</td>
-      </tr>
-      <tr>
-        <td>example</td>
-        <td>example</td>
-        <td>mexample</td>
-      </tr>
-      <tr>
-        <td>example</td>
-        <td>example</td>
-        <td>example</td>
-      </tr>
-    </tbody>
-  </table>
+                </form>
+                <table id="csvTable">
+                </table>
+                <!-- Result Table -->
+                <div class="mt-4">
+                    <h2>Results</h2>
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                @foreach (current($response) as $header)
+                                <th>{{ $header }}</th>
+                                @endforeach
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (array_slice($response, 1) as $row)
+                            <tr>
+                                @foreach ($row as $cell)
+                                <td>{{ $cell }}</td>
+                                @endforeach
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
 
-
-					
                 </div>
-            </main>
-        </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Penalty</th>
+                                <th>Record</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>example</td>
+                                <td>example</td>
+                                <td>example</td>
+                            </tr>
+                            <tr>
+                                <td>example</td>
+                                <td>example</td>
+                                <td>mexample</td>
+                            </tr>
+                            <tr>
+                                <td>example</td>
+                                <td>example</td>
+                                <td>example</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+        </main>
+    </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>	
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
         function sendData() {
@@ -153,67 +154,68 @@
                 },
                 body: JSON.stringify(inputData),
             })
-            .then(response => response.json())
-            .then(data => {
-                document.getElementById('result').innerText = `Result: ${data.result}`;
-            })
-            .catch(error => console.error('Error:', error));
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('result').innerText = `Result: ${data.result}`;
+                })
+                .catch(error => console.error('Error:', error));
         }
     </script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const showButton = document.querySelector("#showButton");
-        const fromDateInput = document.querySelector("#fromDate");
-        const toDateInput = document.querySelector("#toDate");
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const showButton = document.querySelector("#showButton");
+            const fromDateInput = document.querySelector("#fromDate");
+            const toDateInput = document.querySelector("#toDate");
 
-        showButton.addEventListener("click", function () {
-            // Get the selected "From" and "To" dates
-            const fromDate = fromDateInput.value;
-            const toDate = toDateInput.value;
+            showButton.addEventListener("click", function () {
+                // Get the selected "From" and "To" dates
+                const fromDate = fromDateInput.value;
+                const toDate = toDateInput.value;
 
-            // You can perform actions with the selected dates here
-            // For example, you can send them to a backend server for data retrieval
+                // You can perform actions with the selected dates here
+                // For example, you can send them to a backend server for data retrieval
 
-            // For now, let's just display the selected dates in an alert
-            alert(`Selected From Date: ${fromDate}\nSelected To Date: ${toDate}`);
+                // For now, let's just display the selected dates in an alert
+                alert(`Selected From Date: ${fromDate}\nSelected To Date: ${toDate}`);
+            });
         });
-    });
-</script>
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const showButton = document.querySelector("#showButton");
-        const fromDateInput = document.querySelector("#fromDate");
-        const toDateInput = document.querySelector("#toDate");
-        const resultsTableBody = document.querySelector("#resultsTableBody");
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const showButton = document.querySelector("#showButton");
+            const fromDateInput = document.querySelector("#fromDate");
+            const toDateInput = document.querySelector("#toDate");
+            const resultsTableBody = document.querySelector("#resultsTableBody");
 
-        showButton.addEventListener("click", function () {
-            // Get the selected "From" and "To" dates
-            const fromDate = fromDateInput.value;
-            const toDate = toDateInput.value;
+            showButton.addEventListener("click", function () {
+                // Get the selected "From" and "To" dates
+                const fromDate = fromDateInput.value;
+                const toDate = toDateInput.value;
 
-            // You can perform actions with the selected dates here
-            // For now, let's just create a sample result and display it in the table
-            const sampleResult = [
-                { date: "2023-10-10", violationType: "Speeding" },
-                { date: "2023-10-12", violationType: "Running a red light" },
-                // Add more sample data or retrieve data from your database
-            ];
+                // You can perform actions with the selected dates here
+                // For now, let's just create a sample result and display it in the table
+                const sampleResult = [
+                    { date: "2023-10-10", violationType: "Speeding" },
+                    { date: "2023-10-12", violationType: "Running a red light" },
+                    // Add more sample data or retrieve data from your database
+                ];
 
-            // Clear existing table rows
-            resultsTableBody.innerHTML = "";
+                // Clear existing table rows
+                resultsTableBody.innerHTML = "";
 
-            // Populate the table with results
-            sampleResult.forEach((result) => {
-                const row = document.createElement("tr");
-                row.innerHTML = `
+                // Populate the table with results
+                sampleResult.forEach((result) => {
+                    const row = document.createElement("tr");
+                    row.innerHTML = `
                     <td>${result.date}</td>
                     <td>${result.violationType}</td>
                 `;
-                resultsTableBody.appendChild(row);
+                    resultsTableBody.appendChild(row);
+                });
             });
         });
-    });
-</script>
+    </script>
 </body>
+
 </html>

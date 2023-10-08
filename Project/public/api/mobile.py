@@ -34,8 +34,8 @@ for key in sorted(count.keys()):
     mobile_offence_year.append(key)
     mobile_offence_total.append(count[key])
 
-plt.plot(mobile_offence_year, mobile_offence_total, 'r-') 
+plt.plot(mobile_offence_year, mobile_offence_total, 'r-')
 plt.title("Trend of mobile phone usage offence") 
 plt.ylabel("Total of penalty notices issued") 
-plt.xlabel("Year") 
+plt.xlabel("Year")
 plt.savefig("images/mobile_phone_usage_trend.png")
