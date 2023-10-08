@@ -46,13 +46,14 @@ match search:
         result = data[data['FOOD_IND'] == 'Y'] 
     case 'parking': 
         result = data[data['PARKING_IND'] == 'Y'] 
-        
+
 print(result)
 
 '''
    ------------ Feature 3 --------------------
    Retrieve all cases captured by radar or camera based on offense description
 '''
+
 radar = True # Check the checkbox value
 if(radar):
    captured_cases = data[data['OFFENCE_DESC'].str.contains("Radar")]

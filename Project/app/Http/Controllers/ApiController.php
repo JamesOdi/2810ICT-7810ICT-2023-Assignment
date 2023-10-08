@@ -19,6 +19,7 @@ class ApiController extends Controller
         } else {
             dd('File not found');
         }
+        
         $filePath = 'api/penalty_data_set_2.csv';
 
         // Check if the CSV file exists
