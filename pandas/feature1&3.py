@@ -26,12 +26,11 @@ if from_date == '' and to_date == '':
 else:
     data = df.loc[(df['OFFENCE_MONTH'] >= from_date) & (df['OFFENCE_MONTH'] <= to_date)]
 
-print(data) # display to table
 
-# # Search offences by offence_code
-# code = int(input("Search by offence code: "))
-# offences = data[data['OFFENCE_CODE'] == code]
-# print(offences)
+# Search offences by offence_code
+code = int(input("Search by offence code: "))
+offences = data[data['OFFENCE_CODE'] == code]
+print(offences)
 
 # Search offences by offence type
 search = input("Search by offence type: ")
@@ -49,10 +48,10 @@ match search:
         
 print(result)
 
-'''
-   ------------ Feature 3 --------------------
-   Retrieve all cases captured by radar or camera based on offense description
-'''
+# '''
+#    ------------ Feature 3 --------------------
+#    Retrieve all cases captured by radar or camera based on offense description
+# '''
 radar = True # Check the checkbox value
 if(radar):
    captured_cases = data[data['OFFENCE_DESC'].str.contains("Radar")]
@@ -67,3 +66,14 @@ lidar = True # Check the checkbox value
 if(lidar):
    captured_cases = data[data['OFFENCE_DESC'].str.contains("Lidar")]
    print(captured_cases)
+
+# ------------------- Save to a new csv file -----------------------------
+'''
+    This part takes 100 first rows of the dataframe to save to a new csv file
+'''
+cols = ['OFFENCE_FINYEAR','OFFENCE_MONTH','OFFENCE_CODE','OFFENCE_DESC','LEGISLATION',
+        'FACE_VALUE', 'LOCATION_DETAILS', 'SPEED_BAND', 'SPEED_IND', 'SPEED_CAMERA_IND',
+        'SEATBELT_IND', 'MOBILE_PHONE_IND', 'PARKING_IND', 'TOTAL_NUMBER', 'TOTAL_VALUE']
+ 
+df2 = data[cols].head(100)
+df2.to_csv('feature_1.csv', index=False)
