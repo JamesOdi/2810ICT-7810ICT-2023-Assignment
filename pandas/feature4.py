@@ -25,6 +25,7 @@ plt.show()
 '''
 info = mobile_phone_df.drop_duplicates(subset = 'OFFENCE_CODE')
 info_df = info.loc[:,['OFFENCE_CODE', 'OFFENCE_DESC', 'OFFENCE_FINYEAR', 'OFFENCE_MONTH', 'FACE_VALUE']]
+info_df.to_csv('feature_4.csv', index=False)
 print(info_df)
 
 
