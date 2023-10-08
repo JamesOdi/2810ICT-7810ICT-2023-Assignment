@@ -16,7 +16,7 @@ count = {}
 
 # pie chart show the percentage of mobile phone offence out of the total offences
 plt.pie([mobile_phone_df['TOTAL_NUMBER'].sum(), df['TOTAL_NUMBER'].sum()], labels=['Mobile phone usage','Total'], autopct='%1.1f%%', explode=(0, 0.2))
-# plt.savefig("mobile_phone_usage_percentage.png")
+plt.savefig("mobile_phone_usage_percentage.png")
 plt.show()
 
 # ---- Information display as a table ----
@@ -43,5 +43,5 @@ plt.plot(mobile_offence_year, mobile_offence_total, 'r-')
 plt.title("Trend of mobile phone usage offence") 
 plt.ylabel("Total of penalty notices issued") 
 plt.xlabel("Year") 
-# plt.savefig("mobile_phone_usage_trend.png")
+plt.savefig("mobile_phone_usage_trend.png")
 plt.show()
