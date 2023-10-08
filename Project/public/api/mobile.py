@@ -19,6 +19,7 @@ plt.pie([mobile_phone_df['TOTAL_NUMBER'].sum(), df['TOTAL_NUMBER'].sum()], label
 plt.savefig("images/mobile_phone_usage_percentage.png")
 
 # ---- Information display as a table ----
+'''
 info = mobile_phone_df.drop_duplicates(subset = 'OFFENCE_CODE')
 print(info.loc[:,['OFFENCE_CODE', 'OFFENCE_DESC', 'OFFENCE_FINYEAR', 'OFFENCE_MONTH', 'FACE_VALUE']])
 
