@@ -25,7 +25,7 @@ plt.clf()
 '''
 info = mobile_phone_df.drop_duplicates(subset = 'OFFENCE_CODE')
 info_df = info.loc[:,['OFFENCE_CODE', 'OFFENCE_DESC', 'OFFENCE_FINYEAR', 'OFFENCE_MONTH', 'FACE_VALUE']]
-
+print(info_df)
 
 # ---- Trend ----
 # Use dictionary to count the total of mobile usage offence in each year

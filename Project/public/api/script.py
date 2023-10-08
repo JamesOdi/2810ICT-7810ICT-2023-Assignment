@@ -32,7 +32,6 @@ if len(sys.argv ) > 2:
 
 if from_date == '' and to_date == '':
     data = df
-    print(data)
 else:
     data = df.loc[(df['OFFENCE_MONTH'] >= from_date) & (df['OFFENCE_MONTH'] <= to_date)]
     print(data)
@@ -49,5 +48,14 @@ else:
             result = data[data['FOOD_IND'] == 'Y'] 
         case 'parking': 
             result = data[data['PARKING_IND'] == 'Y'] 
-    # print(result)
-    
+    data = result
+
+'''
+    This part takes 100 first rows of the dataframe to save to a new csv file
+'''
+cols = ['OFFENCE_FINYEAR','OFFENCE_MONTH','OFFENCE_CODE','OFFENCE_DESC','LEGISLATION',
+        'FACE_VALUE', 'LOCATION_DETAILS', 'SPEED_BAND', 'SPEED_IND', 'SPEED_CAMERA_IND',
+        'SEATBELT_IND', 'MOBILE_PHONE_IND', 'PARKING_IND', 'TOTAL_NUMBER', 'TOTAL_VALUE']
+ 
+df2 = data[cols].head(100)
+df2.to_csv('api/feature_1.csv', index=False)

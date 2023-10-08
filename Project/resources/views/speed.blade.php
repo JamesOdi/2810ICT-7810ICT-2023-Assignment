@@ -14,7 +14,6 @@
     <div class="container-fluid">
         <div class="row">
 
-
             <!-- Left Sidebar -->
             <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar position-fixed top-0">
 
@@ -26,7 +25,6 @@
                             <h4> Menu</h4>
                             <p></p>
                         </li>
-
 
                         <div class="dropdown">
                             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
@@ -53,63 +51,46 @@
             </nav>
 
             <div class="container mt-5">
-                <h1> Mobile Phone Usage Analytics</h1>
-                <p>Quick Glance at summary of Mobile Phone Usage violations</p>
-
-
-
-
+                <h1> Exceed Speeding Analytics</h1>
+                <p>Quick Glance at summary of Exceed Speeding traffic violations</p>
 
                 <!-- Main Content -->
 
                 <div class="my-4">
                     <div class="column">
                         <div class="col-sm-6 col-md-12 col-lg-4 col-xl-6 col-xxl-4">
-                            <h2>Pie Chart <img src='{{asset("images/mobile_phone_usage_percentage.png")}}'
-                                    id="analytics-chart"></h2><br>
+                            <h2>Pie Chart <img src='{{asset("images/exceed_speed_percentage.png")}}' id="analytics-chart"></h2><br>
                             <p>
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-4 col-xl-6 col-xxl-4">
-                            <h2>Trend <img src='{{asset("images/mobile_phone_usage_trend.png")}}' id="graph-chart"></h2>
-                            <br>
+                            <h2>Trend <img src='{{asset("images/exceed_speed_trend.png")}}' id="graph-chart"></h2><br>
+                            <p>
+                        </div>
+                        <div class="col-sm-12 col-md-6 col-lg-4 col-xl-6 col-xxl-4">
+                            <h2>Graph <img src='{{asset("images/exceed_speed_location.png")}}' id="pie-chart"></h2><br>
                             <p>
                         </div>
                     </div>
 
                     <!-- Table -->
                     <div class="my-4">
-                        <h2>Data Table</h2>
-                        <!-- Add your data table here -->
-                        <table class="table">
+                        <h2>Results</h2>
+                        <table class="table table-bordered">
                             <thead>
                                 <tr>
-                                    <th>Column 1</th>
-                                    <th>Column 2</th>
-                                    <th>Column 3</th>
+                                    @foreach (current($response) as $header)
+                                    <th>{{ $header }}</th>
+                                    @endforeach
                                 </tr>
                             </thead>
                             <tbody>
+                                @foreach (array_slice($response, 1) as $row)
                                 <tr>
-                                    <td>Data 1</td>
-                                    <td>Data 2</td>
-                                    <td>Data 3</td>
+                                    @foreach ($row as $cell)
+                                    <td>{{ $cell }}</td>
+                                    @endforeach
                                 </tr>
-                                <tr>
-                                    <td>Data 1</td>
-                                    <td>Data 2</td>
-                                    <td>Data 3</td>
-                                </tr>
-                                <tr>
-                                    <td>Data 1</td>
-                                    <td>Data 2</td>
-                                    <td>Data 3</td>
-                                </tr>
-                                <tr>
-                                    <td>Data 1</td>
-                                    <td>Data 2</td>
-                                    <td>Data 3</td>
-                                </tr>
-
+                                @endforeach
                             </tbody>
                         </table>
                     </div>

@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,20 +12,15 @@
 <body>
     <div class="container-fluid">
         <div class="row">
-
-
             <!-- Left Sidebar -->
             <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar position-fixed top-0">
-
                 <div class="position-sticky">
                     <ul class="nav flex-column">
-
                         <p></p>
                         <li class="nav-item">
                             <h4> Menu</h4>
                             <p></p>
                         </li>
-
 
                         <div class="dropdown">
                             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
@@ -40,9 +34,9 @@
                         </div>
                 </div>
                 <p> </p>
-                <a href="case.html" class="btn btn-success">Case Distribution</a>
+                <a href="case" class="btn btn-success">Case Distribution</a>
                 <p> </p>
-                <a href="analytics.html" class="btn btn-success">Analytics</a>
+                <a href="analytics" class="btn btn-success">Analytics</a>
                 </ul>
         </div>
         </nav>
@@ -56,30 +50,23 @@
                 <h1>Analytics</h1>
                 <p>Quick Glance at summary of traffic violations</p>
 
-
-
-
-
                 <!-- Main Content -->
-
-
                 <div class="my-4">
                     <div class="row">
                         <div class="col-sm-6 col-md-12 col-lg-4 col-xl-6 col-xxl-4">
-                            <h2>Exceed Speed <a href="">
-                                    <img src="" id="analytics-chart" href="speed.html" width="300" height="200">
+                            <h2>Exceed Speed <a href="speed">
+                                    <img src="" id="analytics-chart" width="300" height="200">
                             </h2><br>
                             <p>
                         </div> </a>
 
                         <div class="col-sm-12 col-md-6 col-lg-4 col-xl-6 col-xxl-4">
-                            <h2>Mobile Phone Usage <a href="mobile"><img src="pie.png" id="pie-chart"
-                                        href="mobile.html" width="300" height="200"></h2><br>
+                            <h2>Mobile Phone Usage <a href="mobile"><img src="pie.png" id="pie-chart" href="mobile"
+                                        width="300" height="200"></h2><br>
                             <p>
                         </div></a>
                     </div>
         </main>
-
     </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

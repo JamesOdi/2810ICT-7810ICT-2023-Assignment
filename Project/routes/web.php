@@ -14,12 +14,14 @@ use App\Http\Controllers\ApiController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [ApiController::class, 'getResults']);
 
 Route::get('/test', [ApiController::class, 'getResults']);
+
+Route::get('/case', [ApiController::class, 'getCases']);
 
 Route::get('/analytics', [ApiController::class, 'getAnalytics']);
 
 Route::get('/mobile', [ApiController::class, 'getMobile']);
+
+Route::get('/speed', [ApiController::class, 'getSpeed']);

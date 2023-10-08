@@ -24,7 +24,6 @@
                             <h4 class="nav-heading">Menu</h4>
                         </li>
 
-
                         <div class="dropdown">
                             <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
                                 Penalty Cases
@@ -37,9 +36,9 @@
                         </div>
                 </div>
                 <p> </p>
-                <a href="case.html" class="btn btn-success">Case Distribution</a>
+                <a href="case" class="btn btn-success">Case Distribution</a>
                 <p> </p>
-                <a href="analytics.html" class="btn btn-success">Analytics</a>
+                <a href="analytics" class="btn btn-success">Analytics</a>
                 </ul>
         </div>
         </nav>

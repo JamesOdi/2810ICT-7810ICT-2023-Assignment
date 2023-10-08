@@ -10,7 +10,7 @@ offence_year = []
 offence_code_total = []
 offence_count = {}
 
-df = pd.read_csv(r".\penalty_data_set_2.csv", low_memory=False)
+df = pd.read_csv(r"api/penalty_data_set_2.csv", low_memory=False)
 
 '''
    ------------ Feature 2 --------------------
@@ -33,7 +33,13 @@ if from_date == '' and to_date == '':
 else:
    data = df.loc[(df['OFFENCE_MONTH'] >= from_date) & (df['OFFENCE_MONTH'] <= to_date)]
 
-offence_code = int(sys.argv[1]) # take value from html tag
+html_code = ''
+if len(sys.argv) > 1:
+   html_code = sys.argv[1]
+
+offence_code = 0 # take value from html tag
+if html_code != '':
+   offence_code = int(html_code)
 
 filtered_data = data[data['OFFENCE_CODE'] == offence_code]
 
